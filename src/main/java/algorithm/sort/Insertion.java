@@ -13,7 +13,7 @@ public class Insertion {
     }
 
     private static int[] insertion2(int[] array) {
-        if (array.length == 0) {
+        if (array.length < 2) {
             return array;
         }
         int arrayLength = array.length;
@@ -26,14 +26,13 @@ public class Insertion {
                 array[j] = array[j-1];
                 array[j-1] = item;
             }
-
         }
 
         return array;
     }
 
     private static int[] insertion(int[] array) {
-        if (array.length == 0) {
+        if (array.length < 2) {
             return array;
         }
         int arrayLength = array.length;

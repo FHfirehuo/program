@@ -17,8 +17,9 @@ public class Bubble {
         System.out.println("排序后数组：" + Arrays.toString(Bubble.bubble2(array)));
     }
 
+    //这种是大家常写的最优也是n^2达不到n的
     public static int[] bubble(int[] origin) {
-        if (origin.length < 1) {
+        if (origin.length < 2) {
             return origin;
         }
 
@@ -44,9 +45,9 @@ public class Bubble {
         return origin;
     }
 
-
+    //这种是优化过的最优是n
     public static int[] bubble2(int[] origin) {
-        if (origin.length < 1) {
+        if (origin.length < 2) {
             return origin;
         }
         int quence = 0;

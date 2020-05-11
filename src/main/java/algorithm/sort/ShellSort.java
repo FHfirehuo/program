@@ -11,28 +11,28 @@ public class ShellSort {
         System.out.println("排序后数组：" + Arrays.toString(ShellSort.shell(array)));
     }
 
+
     private static int[] shell(int[] array) {
         int length = array.length;
-        if (length == 0) {
+        if (length < 2) {
             return array;
         }
 
-        int tmp, gap = length / 2;
-
+        int tmp, preIndex, gap = length / 2;
         while (gap > 0) {
-            // 注意：这里和动图演示的不一样，动图是分组执行，实际操作是多个分组交替执行
+
             for (int i = gap; i < length; i++) {
                 tmp = array[i];
-                int preIndex = i - gap;
-                while (preIndex > 0 && array[preIndex] > tmp) {
+                preIndex = i - gap;
+                while (preIndex >= 0 && array[preIndex] > array[preIndex + gap]) {
                     array[preIndex + gap] = array[preIndex];
                     preIndex -= gap;
                 }
                 array[preIndex + gap] = tmp;
             }
+
             gap = gap / 2;
         }
-
         return array;
     }
 }

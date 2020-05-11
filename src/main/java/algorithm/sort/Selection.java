@@ -12,7 +12,7 @@ public class Selection {
     }
 
     private static int[] selection(int[] array) {
-        if(array.length == 0){
+        if(array.length < 2){
             return array;
         }
 
