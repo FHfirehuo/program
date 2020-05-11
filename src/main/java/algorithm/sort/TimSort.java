@@ -21,7 +21,24 @@ public class TimSort {
             return array;
         }
 
+        Arrays.sort(array);
+        long[] l = {1, 2};
+        Arrays.sort(l);
 
+        Object[] o = {1, 2};
+        Arrays.sort(o);
+
+        String[] s = {"a", "b"};
+        Arrays.sort(s);
+
+        double[] d = {1.1, 2.2};
+        Arrays.sort(d);
+
+        byte[] b = {'a', 'b'};
+
+        Arrays.sort(b);
+        boolean[] bool = {false, true, false};
+        //Arrays.sort(bool);
         return array;
     }
 }
