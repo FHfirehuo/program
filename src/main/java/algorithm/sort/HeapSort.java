@@ -27,11 +27,31 @@ public class HeapSort {
             array[0] = array[length - 1];
             array[length - 1] = temp;
             length--;
-            buildMaxHeap(array, length);
+            popBuildMaxHeap(array, length);
         }
 
-
         return array;
+    }
+
+    private static void popBuildMaxHeap(int[] array, int length) {
+        int parentIndex = 0;
+        int temp = array[parentIndex];
+        int childIndex = 2 * parentIndex + 1;
+        while (childIndex < length) {
+            if (childIndex + 1 < length && array[childIndex] < array[childIndex + 1]) {
+                childIndex++;
+            }
+            if (array[childIndex] > temp) {
+
+                array[parentIndex] = array[childIndex];
+                parentIndex = childIndex;
+                childIndex = 2 * parentIndex + 1;
+            } else {
+                break;
+            }
+        }
+        array[parentIndex] = temp;
+
     }
 
     /**
@@ -41,30 +61,28 @@ public class HeapSort {
      * @param length
      */
     private static void buildMaxHeap(int[] array, int length) {
-        for (int i = length / 2 - 1; i >= 0; i--) {
-            adjustHeap(array, i, length);
+
+        for (int i = 0; i < length / 2; i++) {
+            downAdjustHeap(array, i, length);
         }
     }
 
-    private static void adjustHeap(int[] array, int i, int length) {
-        int temp = array[i];
-        int parentIndex = i;
-        int chaildIndex = 2 * parentIndex + 1;
-        while (chaildIndex < length) {
-
-            if (chaildIndex + 1 < length && array[chaildIndex] < array[chaildIndex + 1]) {
-                //右叶子比较大
-                chaildIndex++;
-            }
-            if (temp < array[chaildIndex]) {
-                array[parentIndex] = array[chaildIndex];
-                parentIndex = chaildIndex;
-                chaildIndex = 2 * parentIndex + 1;
-            }else {
-                break;
-            }
+    /**
+     * 通过下沉初始化一个无序数组为大顶堆
+     *
+     * @param array
+     * @param parentIndex
+     */
+    private static void downAdjustHeap(int[] array, int parentIndex, int length) {
+        int childIndex = 2 * parentIndex + 1;
+        if (childIndex + 1 < length && array[childIndex] < array[childIndex + 1]) {
+            childIndex++;
         }
-
-        array[parentIndex] = temp;
+        if (array[childIndex] > array[parentIndex]) {
+            int temp = array[parentIndex];
+            array[parentIndex] = array[childIndex];
+            array[childIndex] = temp;
+        }
     }
+
 }
