@@ -1,25 +1,20 @@
 package datastructure.sequence;
 
 
-import java.util.Vector;
+public interface FireVector<E> {
 
-public class FireVector {
+    boolean isEmpty();
 
-    public static void main(String[] args) {
-        Vector<Integer> v = new Vector<>();
-        v.add(1);
-        v.add(1,1);
-        v.addElement(1);
-        v.contains(1);
-        v.elementAt(0);
-        v.get(0);
-        v.isEmpty();
-        v.remove(1);
-        v.remove(1);
-        v.size();
-        v.set(1,1);
-        
+    int size();
 
+    void add(E e);
 
-    }
+    void set(int index, E e);
+
+    E get(int index);
+
+    void remove(int index);
+
+    boolean contains(E e);
+
 }
