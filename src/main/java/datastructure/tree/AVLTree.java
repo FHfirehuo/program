@@ -1,11 +1,52 @@
 package datastructure.tree;
 
+import java.util.Queue;
+import java.util.concurrent.LinkedBlockingDeque;
+
 /**
  * 平衡二叉树
  */
 public class AVLTree<E extends Comparable> {
 
     private Node<E> root;
+
+
+    /**
+     * 层序遍历
+     * <p>
+     * 层次遍历就是按照树的层次自上而下的遍历二叉树
+     * </p>
+     */
+    public void LayerOrder() {
+
+        Queue<Node> queue = new LinkedBlockingDeque<>();
+        queue.add(root);
+        LayerOrder(queue);
+
+
+
+    }
+
+    private void LayerOrder(Queue<Node> queue) {
+
+        Node nextNode = queue.poll();
+        if (nextNode == null){
+            return;
+        }
+
+        System.out.println(nextNode.data);
+
+
+        if (nextNode.lchild != null) {
+            queue.add(nextNode.lchild);
+        }
+
+        if (nextNode.rchild != null) {
+            queue.add(nextNode.rchild);
+        }
+
+        LayerOrder(queue);
+    }
 
     /**
      * 左旋
@@ -63,7 +104,7 @@ public class AVLTree<E extends Comparable> {
 
     public void add(E element) {
         Node<E> newNode = new Node<>(element);
-        this.insert(root, newNode);
+        root = this.insert(root, newNode);
     }
 
     private Node<E> insert(Node<E> origin, Node<E> newNode) {
@@ -80,11 +121,81 @@ public class AVLTree<E extends Comparable> {
             origin.lchild = insert(origin.lchild, newNode);
         }
 
-
-
+        boolean balance = isBalance(origin);
+        if (!balance){
+            origin = adjustment(origin, newNode);
+        }
 
         return origin;
     }
+
+    private Node<E> adjustment(Node<E> origin, Node<E> newNode) {
+
+        if (origin.lchild != null && origin.lchild.data.compareTo(newNode.data) > 0 ){
+            //新节点小于不平衡节点的左节点则是插入了左子树的左子树
+            //RR型
+            return rightRotate(origin);
+        }
+
+        if (origin.rchild.data.compareTo(newNode.data) < 0){
+           //新节点大于不平衡节点的右节点则是插入了右子树的右子树
+            //LL型
+            return leftRotate(origin);
+        }
+
+        if (origin.lchild.data.compareTo(newNode.data) < 0 ){
+            //新节点大于不平衡节点的左节点则是插入了左子树的右子树
+            //LR型
+            return leftRightRotate(origin);
+        }
+
+        if (origin.rchild.data.compareTo(newNode.data) > 0){
+            //新节点小于不平衡节点的右节点则是插入了右子树的左子树
+            //RL型
+            return rightRotate(origin);
+        }
+
+        return origin;
+    }
+
+    private boolean isBalance(Node<E> origin) {
+        return isBalancedTreeHelper(origin).balanced;
+    }
+
+    private TreeInfo isBalancedTreeHelper(Node<E> origin) {
+
+        if (origin == null){
+            return  new TreeInfo(-1, true);
+        }
+
+        // Check subtrees to see if they are balanced.
+        TreeInfo left = isBalancedTreeHelper(origin.lchild);
+        if (!left.balanced) {
+            return new TreeInfo(-1, false);
+        }
+        TreeInfo right = isBalancedTreeHelper(origin.rchild);
+        if (!right.balanced) {
+            return new TreeInfo(-1, false);
+        }
+        // Use the height obtained from the recursive calls to
+        // determine if the current node is also balanced.
+        if (Math.abs(left.height - right.height) < 2) {
+            return new TreeInfo(Math.max(left.height, right.height) + 1, true);
+        }
+        return new TreeInfo(-1, false);
+    }
+
+
+    private final class TreeInfo{
+        int height;
+        boolean balanced;
+
+        TreeInfo(int height, boolean balanced){
+            this.height = height;
+            this.balanced =balanced;
+        }
+    }
+
 
 
     private class Node<E extends Comparable> {
@@ -97,6 +208,22 @@ public class AVLTree<E extends Comparable> {
             this.data = (E) element;
         }
 
+    }
+
+
+    public static void main(String[] args) {
+        AVLTree<Integer> tree = new AVLTree<>();
+        tree.add(1);
+        tree.add(2);
+        tree.add(3);
+        tree.add(4);
+        tree.add(5);
+        tree.add(6);
+        tree.add(7);
+        tree.add(8);
+        tree.add(9);
+        tree.add(10);
+        tree.LayerOrder();
     }
 
 }
