@@ -1,10 +1,5 @@
 package designpatterns.prototype;
 
-/**
- * $Des$
- *
- * @author liuyi27
- */
 public class MessageBox implements Product {
     char ch;
 

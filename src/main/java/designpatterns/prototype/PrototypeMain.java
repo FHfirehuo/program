@@ -1,13 +1,8 @@
 package designpatterns.prototype;
 
-/**
- * $Des$
- *
- * @author liuyi27
- */
 public class PrototypeMain {
     public static void main(String[] args) {
-        Manager m = new  Manager();
+        Manager m = new Manager();
         Product p1 = new Underline('@');
         m.register("line", p1);
 

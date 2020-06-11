@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class AudiCar implements ICar{
+public class AudiCar implements ICar {
     private Engine engine;
     private Underpan underpan;
     private Wheel wheel;

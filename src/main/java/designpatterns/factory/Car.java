@@ -7,11 +7,11 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class Car implements ICar{
+public class Car implements ICar {
 
 
     private Engine engine;
-    private Underpan underpan;
+    private UnderPan underpan;
     private Wheel wheel;
 
 

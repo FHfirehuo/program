@@ -2,11 +2,6 @@ package designpatterns.prototype;
 
 import java.util.HashMap;
 
-/**
- * $Des$
- *
- * @author liuyi27
- */
 public class Manager {
 
     HashMap hashmap = new HashMap();
