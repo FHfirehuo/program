@@ -1,11 +1,6 @@
 package designpatterns.adapter.clazz.zyr;
 
-/**
- * $Des$
- *
- * @author liuyi27
- */
-public class PrintBanner extends Banner implements Print  {
+public class PrintBanner extends Banner implements Print {
 
     public PrintBanner(String name) {
         super(name);

@@ -1,10 +1,5 @@
 package designpatterns.adapter.object.zyr;
 
-/**
- * $Des$
- *
- * @author liuyi27
- */
 public class Banner {
 
     private String name;

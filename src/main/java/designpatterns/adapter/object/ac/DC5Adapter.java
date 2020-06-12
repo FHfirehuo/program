@@ -3,7 +3,6 @@ package designpatterns.adapter.object.ac;
 /**
  * 适配器接口
  *
- * @author liuyi27
  */
 public interface DC5Adapter {
 

@@ -1,10 +1,5 @@
 package designpatterns.adapter.object.ac;
 
-/**
- * $Des$
- *
- * @author liuyi27
- */
 public class JapanPowerAdapter implements DC5Adapter {
 
     public static final int voltage = 110;

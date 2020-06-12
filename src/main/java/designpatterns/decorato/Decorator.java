@@ -1,6 +1,6 @@
 package designpatterns.decorato;
 
-//装饰器r
+//装饰器
 public class Decorator implements House {
 
     private House house;

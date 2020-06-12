@@ -3,16 +3,11 @@ package designpatterns.adapter.object.ac;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * $Des$
- *
- * @author liuyi27
- */
 public class ACMain {
 
     private List<DC5Adapter> adapters = new LinkedList<DC5Adapter>();
 
-    ACMain(){
+    ACMain() {
         this.adapters.add(new ChinaPowerAdapter());
         this.adapters.add(new JapanPowerAdapter());
     }
@@ -26,8 +21,8 @@ public class ACMain {
                 break;
             }
         }
-        if (adapter == null){
-            throw new  IllegalArgumentException("没有找到合适的变压适配器");
+        if (adapter == null) {
+            throw new IllegalArgumentException("没有找到合适的变压适配器");
         }
         return adapter;
     }

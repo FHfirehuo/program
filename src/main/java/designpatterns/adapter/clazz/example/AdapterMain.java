@@ -1,10 +1,5 @@
 package designpatterns.adapter.clazz.example;
 
-/**
- * $Des$
- *
- * @author liuyi27
- */
 public class AdapterMain {
 
     public static void main(String[] args) {

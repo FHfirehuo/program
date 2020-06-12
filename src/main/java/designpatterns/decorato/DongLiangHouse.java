@@ -3,8 +3,8 @@ package designpatterns.decorato;
 /**
  * 房子实现类
  */
-public class DonghaoHouse implements House {
+class DongliangHouse implements House {
     public void output() {
-        System.out.println("这是董浩的房子");
+        System.out.println("这是董量的房子");
     }
 }

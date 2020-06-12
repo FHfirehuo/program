@@ -1,10 +1,5 @@
 package designpatterns.adapter.object.ac;
 
-/**
- * $Des$
- *
- * @author liuyi27
- */
 public class ChinaPowerAdapter implements DC5Adapter {
 
     public static final int voltage = 220;

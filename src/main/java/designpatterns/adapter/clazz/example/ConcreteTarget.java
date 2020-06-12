@@ -7,7 +7,6 @@ package designpatterns.adapter.clazz.example;
  *
  * 如果直接实现 Target 是不行的
  *
- * @author liuyi27
  */
 public class ConcreteTarget implements Target {
     public void request() {

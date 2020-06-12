@@ -2,8 +2,6 @@ package designpatterns.adapter.clazz.example;
 
 /**
  * 一个将被适配的类
- *
- * @author liuyi27
  */
 public class Adaptee {
 
