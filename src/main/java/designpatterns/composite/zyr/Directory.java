@@ -3,11 +3,6 @@ package designpatterns.composite.zyr;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/**
- * $Des$
- *
- * @author liuyi27
- */
 public class Directory extends Entry {
 
     String name;

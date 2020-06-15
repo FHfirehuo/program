@@ -2,8 +2,6 @@ package designpatterns.composite.zyr;
 
 /**
  * Entry 抽象类：共同特质
- *
- * @author liuyi27
  */
 public abstract class Entry {
 

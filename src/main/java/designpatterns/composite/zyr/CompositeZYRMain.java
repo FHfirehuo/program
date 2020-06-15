@@ -1,10 +1,5 @@
 package designpatterns.composite.zyr;
 
-/**
- * $Des$
- *
- * @author liuyi27
- */
 public class CompositeZYRMain {
 
 

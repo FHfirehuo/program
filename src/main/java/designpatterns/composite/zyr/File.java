@@ -2,8 +2,6 @@ package designpatterns.composite.zyr;
 
 /**
  * File 类：实现类，叶子结点
- *
- * @author liuyi27
  */
 public class File extends Entry {
 

@@ -2,8 +2,6 @@ package designpatterns.composite.menu;
 
 /**
  * 组合对象的超类，被所有子类继承，相当于统一的节点属性
- *
- * @author liuyi27
  */
 public abstract class MenuComponent {
 
