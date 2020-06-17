@@ -1,6 +1,6 @@
 package designpatterns.observer.bky;
 
-public interface Huairen {
+public interface HuaiRen {
     //添加便衣观察者
     void addObserver(Observer observer);
     //移除便衣观察者

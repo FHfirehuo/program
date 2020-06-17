@@ -3,7 +3,7 @@ package designpatterns.observer.bky;
 import java.util.ArrayList;
 import java.util.List;
 
-public class XianFan1 implements Huairen {
+public class XianFan implements HuaiRen {
     //别称
     private String name = "大熊";
     //定义观察者集合

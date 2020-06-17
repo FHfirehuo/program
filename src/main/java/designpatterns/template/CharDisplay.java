@@ -1,10 +1,5 @@
 package designpatterns.template;
 
-/**
- * $Des$
- *
- * @author liuyi27
- */
 public class CharDisplay extends AbstractDisplay {
 
 

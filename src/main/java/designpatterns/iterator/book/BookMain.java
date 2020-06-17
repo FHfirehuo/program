@@ -1,10 +1,5 @@
 package designpatterns.iterator.book;
 
-/**
- * $Des$
- *
- * @author liuyi27
- */
 public class BookMain {
 
 
@@ -34,10 +29,10 @@ public class BookMain {
          * 可复用指的是将一个类作为一个组件，当一个组件改变时，不需要对其他组件进行修改或者只进行少量的修改就可以实现修改后的功能。
          * MyIterator it= bookShelf.iterator();面向接口编程，便于程序的修改和维护。
          */
-        MyIterator it= bookShelf.iterator();
-        while(it.hasNext()){
-            Book book=(Book)it.next();
-            System.out.println("书的名字为《"+book.getName()+"》");
+        FireIterator it = bookShelf.iterator();
+        while (it.hasNext()) {
+            Book book = (Book) it.next();
+            System.out.println("书的名字为《" + book.getName() + "》");
         }
     }
 }

@@ -1,10 +1,5 @@
 package designpatterns.iterator.book;
 
-/**
- * $Des$
- *
- * @author liuyi27
- */
 public class BookShelf implements Aggregate {
 
     private Book[] books;
@@ -29,14 +24,13 @@ public class BookShelf implements Aggregate {
     }
 
     /**
-     *
      * @return
      */
-    public MyIterator iterator() {
+    public FireIterator iterator() {
         return new BookShelfIterator(this);
     }
 
-    private class BookShelfIterator implements MyIterator {
+    private class BookShelfIterator implements FireIterator {
 
         BookShelf bookShelf;
         int index;

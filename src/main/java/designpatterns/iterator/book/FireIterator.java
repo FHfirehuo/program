@@ -1,11 +1,6 @@
 package designpatterns.iterator.book;
 
-/**
- * $Des$
- *
- * @author liuyi27
- */
-public interface MyIterator {
+public interface FireIterator {
     boolean hasNext();
     Object next();
 }

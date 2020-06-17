@@ -1,18 +1,13 @@
 package designpatterns.template;
 
-/**
- * $Des$
- *
- * @author liuyi27
- */
 public class StringDisplay extends AbstractDisplay {
 
     String word;
     int width;
 
-    StringDisplay(String word){
-        this.word=word;
-        width=word.getBytes().length;
+    StringDisplay(String word) {
+        this.word = word;
+        width = word.getBytes().length;
     }
 
     public void open() {
@@ -20,7 +15,7 @@ public class StringDisplay extends AbstractDisplay {
     }
 
     public void print() {
-        for(int i=0;i<5;i++){
+        for (int i = 0; i < 5; i++) {
             System.out.print("|");
             System.out.print(word);
             System.out.println("|");
@@ -31,9 +26,9 @@ public class StringDisplay extends AbstractDisplay {
         printString();
     }
 
-    private void printString(){
+    private void printString() {
         System.out.print("#");
-        for(int i=0;i<width;i++){
+        for (int i = 0; i < width; i++) {
             System.out.print("*");
         }
         System.out.println("#");

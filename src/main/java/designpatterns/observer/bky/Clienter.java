@@ -3,10 +3,10 @@ package designpatterns.observer.bky;
 public class Clienter {
     public static void main(String[] args) {
         //定义两个嫌犯
-        Huairen xf1 = new XianFan1();
+        HuaiRen xf1 = new XianFan();
 //        Huairen xf2 = new XianFan2();
         //定义三个观察便衣警察
-        Observer o1 = new Bianyi1();
+        Observer o1 = new BianYi();
 //        Observer o2 = new Bianyi2();
 //        Observer o3 = new Bianyi3();
         //为嫌犯增加观察便衣
