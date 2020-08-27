@@ -2,11 +2,6 @@ package designpatterns.chainofresponsibility.dazhe;
 
 import java.util.Random;
 
-/**
- * $Des$
- *
- * @author liuyi27
- */
 public class Customer {
 
     private PriceHandler priceHandler;

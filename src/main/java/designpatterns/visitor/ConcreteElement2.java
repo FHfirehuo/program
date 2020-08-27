@@ -2,7 +2,7 @@ package designpatterns.visitor;
 
 public class ConcreteElement2 extends Element {
 
-    public void doSomething(){
+    public void doSomething() {
         System.out.println("这是元素2");
     }
 

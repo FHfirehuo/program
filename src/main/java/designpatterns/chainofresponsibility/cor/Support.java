@@ -2,8 +2,6 @@ package designpatterns.chainofresponsibility.cor;
 
 /**
  * （抽象类，使用了模板方法）
- *
- * @author liuyi27
  */
 public abstract class Support {
     protected abstract boolean resolve(Trouble trouble);

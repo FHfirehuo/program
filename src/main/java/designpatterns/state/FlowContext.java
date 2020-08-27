@@ -2,19 +2,18 @@ package designpatterns.state;
 
 /**
  * 流程控制
- *
  */
 public class FlowContext {
 
     private boolean flag; // 代表流程是否结束
     /**
      * 流程状态 0：通过 1:驳回 2.退回整改 3.已申请
-     *
      */
     private int status;
 
     private String message; // 消息
     private Node node; // 节点信息
+
     public boolean isFlag() {
         return flag;
     }
@@ -54,10 +53,10 @@ public class FlowContext {
         context.getNode().nodeHandle(context); // 发起请求
         // 最后要知道是否申请成功
         //判断当前是最后一个节点并且审核通过，而且流程结束
-        if("HR李".equals(node.getName())&&0==context.getStatus()&&context.isFlag()){
+        if ("HR李".equals(node.getName()) && 0 == context.getStatus() && context.isFlag()) {
             System.out.println("审核通过,流程结束");
             return true;
-        }else{
+        } else {
             System.out.println("审核未通过，流程已经结束");
             return false;
         }

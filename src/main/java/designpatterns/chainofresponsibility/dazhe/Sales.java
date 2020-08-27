@@ -1,10 +1,5 @@
 package designpatterns.chainofresponsibility.dazhe;
 
-/**
- * $Des$
- *
- * @author liuyi27
- */
 public class Sales extends PriceHandler {
 
 

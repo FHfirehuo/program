@@ -1,10 +1,5 @@
 package designpatterns.chainofresponsibility.cor;
 
-/**
- * $Des$
- *
- * @author liuyi27
- */
 public class LimitSupport extends Support {
 
     private int limit;

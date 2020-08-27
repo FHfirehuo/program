@@ -5,12 +5,17 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.io.*;
+import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class FireTransient {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         serializeUser1();
         deSerializeUser1();
+
+        ConcurrentHashMap<String, Integer> a  = new ConcurrentHashMap();
+        a.put("a", 1);
     }
 
     private static void serializeUser1() throws IOException {

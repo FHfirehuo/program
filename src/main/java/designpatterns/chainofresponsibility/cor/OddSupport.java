@@ -1,10 +1,5 @@
 package designpatterns.chainofresponsibility.cor;
 
-/**
- * $Des$
- *
- * @author liuyi27
- */
 public class OddSupport extends Support {
 
 
@@ -13,6 +8,6 @@ public class OddSupport extends Support {
     }
 
     protected boolean resolve(Trouble trouble) {
-        return (trouble.getNumber()%2) == 1 ? true : false;
+        return (trouble.getNumber() % 2) == 1 ? true : false;
     }
 }
